@@ -1,0 +1,71 @@
+SIMULADOR DE ESCALONAMENTO DE CPU
+
+Carga de trabalho:
+Processo | Chegada | Duracao
+----------------------------
+   P1    |    0    |    8
+   P2    |    1    |    4
+   P3    |    2    |    9
+   P4    |    3    |    5
+
+=======================================================
+SIMULACAO FCFS
+=======================================================
+Processo P1: Fim=8 ms | Espera=0 ms | Retorno=8 ms
+Processo P2: Fim=12 ms | Espera=7 ms | Retorno=11 ms
+Processo P3: Fim=21 ms | Espera=10 ms | Retorno=19 ms
+Processo P4: Fim=26 ms | Espera=18 ms | Retorno=23 ms
+
+Diagrama de Gantt:
+| P1 | P2 | P3 | P4 |
+0    8    12   21   26
+
+Tempo Medio de Espera:  8.75 ms
+Tempo Medio de Retorno: 15.25 ms
+
+=======================================================
+ROUND ROBIN - QUANTUM = 3 ms
+=======================================================
+Processo P1: Fim=23 ms | Espera=15 ms | Retorno=23 ms
+Processo P2: Fim=16 ms | Espera=11 ms | Retorno=15 ms
+Processo P3: Fim=26 ms | Espera=15 ms | Retorno=24 ms
+Processo P4: Fim=21 ms | Espera=13 ms | Retorno=18 ms
+
+Diagrama de Gantt:
+| P1 | P2 | P3 | P4 | P1 | P2 | P3 | P4 | P1 | P3 |
+0    3    6    9    12   15   16   19   21   23   26
+
+Fatias de CPU executadas: 10
+Trocas de contexto:       9
+Tempo Medio de Espera:  13.50 ms
+Tempo Medio de Retorno: 20.00 ms
+
+=======================================================
+ROUND ROBIN - QUANTUM = 1 ms
+=======================================================
+Processo P1: Fim=23 ms | Espera=15 ms | Retorno=23 ms
+Processo P2: Fim=13 ms | Espera=8 ms | Retorno=12 ms
+Processo P3: Fim=26 ms | Espera=15 ms | Retorno=24 ms
+Processo P4: Fim=20 ms | Espera=12 ms | Retorno=17 ms
+
+Fatias de CPU executadas: 26
+Trocas de contexto:       23
+Tempo Medio de Espera:  12.50 ms
+Tempo Medio de Retorno: 19.00 ms
+
+=======================================================
+ROUND ROBIN - QUANTUM = 50 ms
+=======================================================
+Processo P1: Fim=8 ms | Espera=0 ms | Retorno=8 ms
+Processo P2: Fim=12 ms | Espera=7 ms | Retorno=11 ms
+Processo P3: Fim=21 ms | Espera=10 ms | Retorno=19 ms
+Processo P4: Fim=26 ms | Espera=18 ms | Retorno=23 ms
+
+Diagrama de Gantt:
+| P1 | P2 | P3 | P4 |
+0    8    12   21   26
+
+Fatias de CPU executadas: 4
+Trocas de contexto:       3
+Tempo Medio de Espera:  8.75 ms
+Tempo Medio de Retorno: 15.25 ms
